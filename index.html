@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>juBot 0.9b</title>
+  <style type="text/css">
+     .button-control{width:100px;height:100px}.grid{display:inline-flex;flex-flow:row wrap}.down,.up{flex:0 0 100%;text-align:center}.left,.right{flex:1 0 1%;display:flex}.button,.button-control{display:inline-block;padding:15px 25px;font-size:24px;cursor:pointer;text-align:center;text-decoration:none;outline:0;color:#fff}.left{justify-content:flex-end}.right{justify-content:flex-start}.button-control{background-color:#4CAF50;border:none;border-radius:15px;box-shadow:0 9px #999}.button-control:active,.button-control:hover{background-color:#3e8e41}.button-control:active{box-shadow:0 5px #666;transform:translateY(4px)}.button{background-color:#5F6CFA;border:none;border-radius:15px;box-shadow:0 9px #999;margin-right:20px}.button:active,.button:hover{background-color:#0D21FC}.button:active{box-shadow:0 5px #666;transform:translateY(4px)}.grid-buttons{margin-top:50px}   
+  </style>
+  <script type="text/javascript">
+    function load(t,e){var n;if("undefined"!=typeof XMLHttpRequest)n=new XMLHttpRequest;else for(var a=["MSXML2.XmlHttp.5.0","MSXML2.XmlHttp.4.0","MSXML2.XmlHttp.3.0","MSXML2.XmlHttp.2.0","Microsoft.XmlHttp"],r=0,X=a.length;r<X;r++)try{n=new ActiveXObject(a[r]);break}catch(t){}n.onreadystatechange=function(){if(n.readyState<4)return;if(200!==n.status)return;4===n.readyState&&e(n)},n.open("GET",t,!0),n.send("")}
+  </script>
+  <script type="text/javascript">
+     function espMove(param){
+       alert(param);
+
+       load("/url-esp", function(data){
+         alert(data);
+       })
+
+       return false;
+     }
+  </script>
+</head>
+<body>
+  <div class="grid">
+      <div class="up">
+        <button class="button-control" onclick="return espMove('up');">Up </button>        
+      </div>
+      <div class="left">
+        <button class="button-control" onclick="return espMove('le');">Left</button>        
+      </div>
+      <div class="ok">
+        <button class="button-control" onclick="return espMove('st');">Stop</button>        
+      </div>
+      <div class="right">
+        <button class="button-control" onclick="return espMove('ri');">Right</button>        
+      </div>
+      <div class="down">
+        <button class="button-control" onclick="return espMove('do');">Down</button>        
+      </div>
+  </div>
+  <div class="grid-buttons">
+    <button class="button" onclick="return espMove('on');">On</button>
+    <button class="button" onclick="return espMove('of');">Off</button>    
+  </div>
+</body>
+</html>
